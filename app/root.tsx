@@ -1,4 +1,12 @@
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from 'remix'
+import type { FC } from 'react'
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from 'remix'
 import type { MetaFunction, LinksFunction } from 'remix'
 
 import styles from './styles/app.css'
@@ -11,7 +19,7 @@ export const links: LinksFunction = () => {
   return [{ rel: 'stylesheet', href: styles }]
 }
 
-export default function App() {
+const Document: FC = ({ children }) => {
   return (
     <html lang="en">
       <head>
@@ -21,11 +29,21 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        {children}
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === 'development' && <LiveReload />}
       </body>
     </html>
+  )
+}
+
+export default function App() {
+  return (
+    <Document>
+      <div>
+        <Outlet />
+      </div>
+    </Document>
   )
 }

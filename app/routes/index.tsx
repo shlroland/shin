@@ -1,6 +1,8 @@
+import { Link, Outlet } from 'remix'
+
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
       <h1>Welcome to Remix</h1>
       <ul>
         <li>
@@ -27,6 +29,12 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <Link to="detail">
+        <button type="button">deatil</button>
+      </Link>
+      <div className="Outlet">
+        <Outlet />
+      </div>
     </div>
-  );
+  )
 }
