@@ -9,7 +9,8 @@ import {
 } from 'remix'
 import type { MetaFunction, LinksFunction } from 'remix'
 
-import styles from './styles/app.css'
+import AppLayout from './components/Layout/AppLayout'
+import styles from './tailwind.css'
 
 export const meta: MetaFunction = () => {
   return { title: 'New Remix App' }
@@ -41,9 +42,9 @@ const Document: FC = ({ children }) => {
 export default function App() {
   return (
     <Document>
-      <div>
+      <AppLayout>
         <Outlet />
-      </div>
+      </AppLayout>
     </Document>
   )
 }

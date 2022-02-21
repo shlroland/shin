@@ -7,7 +7,7 @@
     "build": "pnpm build:css && remix build",
     "build:css": "tailwindcss -m -i ./app/styles/app.css -o app/styles/app.css",
     "dev": "concurrently \"pnpm dev:css\" \"remix dev\"",
-    "dev:css": "tailwindcss -w -i ./app/styles/app.css -o app/styles/app.css",
+    "dev:css": "tailwindcss -o ./app/tailwind.css --watch",
     "postinstall": "remix setup node",
     "start": "remix-serve build",
     "commit": "cz",
@@ -35,7 +35,7 @@
     "lint-staged": "^12.3.4",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
-    "tailwindcss": "^3.0.22",
+    "tailwindcss": "^3.0.23",
     "typescript": "^4.5.5"
   },
   "engines": {
