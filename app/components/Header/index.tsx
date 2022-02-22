@@ -1,4 +1,6 @@
 import type { FC } from 'react'
+import { AiOutlineTranslation, AiOutlineSearch } from 'react-icons/ai'
+import { BiSun } from 'react-icons/bi'
 import { Link, useLocation } from 'remix'
 
 import logo from './logo2.svg'
@@ -20,6 +22,9 @@ const NAV_LINKS = [
     name: '知识小册',
   },
 ]
+
+const toolWrapper =
+  'text-[24px] px-3 py-0 align-middle leading-[64px] flex justify-center items-center h-16 float-right'
 
 export const Header: FC = () => {
   const { pathname } = useLocation()
@@ -43,7 +48,18 @@ export const Header: FC = () => {
             </Link>
           </div>
           <nav className="flex items-center justify-between flex-grow text-base text-gray-800">
-            <ul className="relative w-full">{navMenu}</ul>
+            <ul className="relative w-full ">
+              {navMenu}
+              <li className={toolWrapper}>
+                <AiOutlineSearch />
+              </li>
+              <li className={toolWrapper}>
+                <BiSun />
+              </li>
+              <li className={toolWrapper}>
+                <AiOutlineTranslation />
+              </li>
+            </ul>
           </nav>
         </div>
       </div>
