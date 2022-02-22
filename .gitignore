@@ -6,5 +6,5 @@ node_modules
 .env
 /app/tailwind.css
 
-*.module.css
-*.module.css.map
+*.css
+*.map

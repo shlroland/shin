@@ -10,14 +10,18 @@ import {
 import type { MetaFunction, LinksFunction } from 'remix'
 
 import AppLayout from './components/Layout/AppLayout'
-import styles from './tailwind.css'
+import globalStyles from './styles/app.css'
+import twStyles from './tailwind.css'
 
 export const meta: MetaFunction = () => {
   return { title: 'New Remix App' }
 }
 
 export const links: LinksFunction = () => {
-  return [{ rel: 'stylesheet', href: styles }]
+  return [
+    { rel: 'stylesheet', href: twStyles },
+    { rel: 'stylesheet', href: globalStyles },
+  ]
 }
 
 const Document: FC = ({ children }) => {
