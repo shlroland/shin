@@ -9,5 +9,6 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/consistent-type-definitions': [1, 'interface'],
   },
 }

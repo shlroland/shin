@@ -10,7 +10,6 @@ import {
 import type { MetaFunction, LinksFunction } from 'remix'
 
 import AppLayout from './components/Layout/AppLayout'
-import globalStyles from './styles/app.css'
 import twStyles from './tailwind.css'
 
 export const meta: MetaFunction = () => {
@@ -18,10 +17,7 @@ export const meta: MetaFunction = () => {
 }
 
 export const links: LinksFunction = () => {
-  return [
-    { rel: 'stylesheet', href: twStyles },
-    { rel: 'stylesheet', href: globalStyles },
-  ]
+  return [{ rel: 'stylesheet', href: twStyles }]
 }
 
 const Document: FC = ({ children }) => {
