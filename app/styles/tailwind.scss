@@ -4,6 +4,46 @@
 
 @layer components {
   .aside-sticky {
-    @apply sticky;
+    @apply sticky top-4 mb-4;
+  }
+
+  .main-bg {
+    @apply bg-white;
+  }
+
+  .second-bg {
+    @apply bg-white;
+  }
+
+  .body-bg {
+    @apply bg-slate-100;
+  }
+
+  .code-bg {
+    @apply bg-zinc-100;
+  }
+
+  .text-main-color {
+    @apply text-gray-800;
+  }
+
+  .text-second-color {
+    @apply text-gray-700;
+  }
+
+  .text-disable-color {
+    @apply text-gray-300;
+  }
+
+  .border-color {
+    @apply border-slate-200;
+  }
+
+  .box-shadow {
+    @apply shadow-md;
+  }
+
+  .radius {
+    @apply rounded-sm;
   }
 }
