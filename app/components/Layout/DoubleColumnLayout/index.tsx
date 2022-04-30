@@ -1,20 +1,16 @@
 import cls from 'classnames'
-import type { FC, ReactNode } from 'react'
+import type { FC, PropsWithChildren, ReactNode } from 'react'
 
-interface DoubleColmnLayoutProps {
+interface DoubleColumnLayoutProps {
   className?: string
   childrenClassName?: string
   asideNode?: ReactNode
   asideClassName?: string
 }
 
-export const DoubleColumnLayout: FC<DoubleColmnLayoutProps> = ({
-  className,
-  children,
-  childrenClassName,
-  asideNode,
-  asideClassName,
-}) => {
+export const DoubleColumnLayout: FC<
+  PropsWithChildren<DoubleColumnLayoutProps>
+> = ({ className, children, childrenClassName, asideNode, asideClassName }) => {
   return (
     <div className={cls('container mx-auto', className)}>
       <div className="flex flex-wrap justify-center">
