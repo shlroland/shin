@@ -1,3 +1,4 @@
 {
   "css.customData": [".vscode/css_custom_data.json"],
+  "scss.lint.unknownAtRules": "ignore"
 }

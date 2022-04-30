@@ -1,5 +1,6 @@
-import { FC, ReactNode } from 'react'
-import { animated, useTrail, UseTrailProps } from 'react-spring'
+import type { FC, ReactNode } from 'react'
+import type { UseTrailProps } from 'react-spring'
+import { animated, useTrail } from 'react-spring'
 
 interface ListTrailProps {
   length: number
@@ -7,6 +8,7 @@ interface ListTrailProps {
   element?: keyof JSX.IntrinsicElements
   setItemContainerProps?: (index: number) => Record<string, unknown>
   renderItem: (index: number) => ReactNode
+  className?: string
 }
 
 export const ListTrail: FC<ListTrailProps> = ({
@@ -15,6 +17,7 @@ export const ListTrail: FC<ListTrailProps> = ({
   element = 'li',
   setItemContainerProps,
   renderItem,
+  className,
 }) => {
   const C = animated[element]
   const trail = useTrail(length, {
@@ -26,7 +29,13 @@ export const ListTrail: FC<ListTrailProps> = ({
     <>
       {trail.map((style, index) => {
         return (
-          <C key={index} style={style} {...setItemContainerProps?.(index)}>
+          // eslint-disable-next-line react/no-array-index-key
+          <C
+            key={index}
+            className={className}
+            style={style}
+            {...setItemContainerProps?.(index)}
+          >
             {renderItem(index)}
           </C>
         )
