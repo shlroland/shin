@@ -1,7 +1,7 @@
+import { Link } from '@remix-run/react'
 import type { FC } from 'react'
 import { AiOutlineTranslation, AiOutlineSearch } from 'react-icons/ai'
 import { BiSun } from 'react-icons/bi'
-import { Link, useLocation } from 'remix'
 
 import logo from './logo2.svg'
 
@@ -27,7 +27,7 @@ const toolWrapper =
   'text-[24px] px-3 py-0 align-middle leading-[64px] flex justify-center items-center h-16 float-right'
 
 export const Header: FC = () => {
-  const { pathname } = useLocation()
+  // const { pathname } = useLocation()
   const navMenu = NAV_LINKS.map(nav => (
     <li
       key={nav.path}
@@ -39,15 +39,15 @@ export const Header: FC = () => {
     </li>
   ))
   return (
-    <header className="relative w-full h-[64px] transition trnasition ease-in-out duration-300">
-      <div className="relative z-50 w-screen h-16 bg-white border-b border-solid border-slate-200">
-        <div className="container relative flex items-center mx-auto">
-          <div className="inline-flex items-center h-16 mr-16 text-gray-800 leading-[64px] text-left">
-            <Link to="/" className="flex items-start h-9">
+    <header className="trnasition relative h-[64px] w-full transition duration-300 ease-in-out">
+      <div className="relative z-50 h-16 w-screen border-b border-solid border-slate-200 bg-white">
+        <div className="container relative mx-auto flex items-center">
+          <div className="mr-16 inline-flex h-16 items-center text-left leading-[64px] text-gray-800">
+            <Link to="/" className="flex h-9 items-start">
               <img className="h-full" src={logo} alt="logo" />
             </Link>
           </div>
-          <nav className="flex items-center justify-between flex-grow text-base text-gray-800">
+          <nav className="flex flex-grow items-center justify-between text-base text-gray-800">
             <ul className="relative w-full ">
               {navMenu}
               <li className={toolWrapper}>

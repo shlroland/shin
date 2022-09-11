@@ -1,4 +1,3 @@
-import type { FC } from 'react'
 import {
   Links,
   LiveReload,
@@ -6,11 +5,13 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from 'remix'
-import type { MetaFunction, LinksFunction } from 'remix'
+} from '@remix-run/react'
+import type { LinksFunction, MetaFunction } from '@remix-run/server-runtime'
+import type { FC, PropsWithChildren } from 'react'
 
 import AppLayout from './components/Layout/AppLayout'
 import twStyles from './tailwind.css'
+import type { AnyObject } from './utils/type'
 
 export const meta: MetaFunction = () => {
   return { title: 'New Remix App' }
@@ -20,7 +21,7 @@ export const links: LinksFunction = () => {
   return [{ rel: 'stylesheet', href: twStyles }]
 }
 
-const Document: FC = ({ children }) => {
+const Document: FC<PropsWithChildren<AnyObject>> = ({ children }) => {
   return (
     <html lang="en">
       <head>
